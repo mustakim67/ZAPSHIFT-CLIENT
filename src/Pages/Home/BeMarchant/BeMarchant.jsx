@@ -1,10 +1,12 @@
 import React from 'react';
 import location from '../../../assets/location-merchant.png'
+import background from '../../../assets/be-a-merchant-bg.png'
 
 const BeMarchant = () => {
     return (
-        <div className='px-[10%]'>
-             <div className="hero bg-[#03373D] rounded-4xl">
+        <div data-aos="flip-up" className='px-[10%]' >
+             <div  className="rounded-4xl bg-[#03373D] bg-cover bg-center"
+                style={{ backgroundImage: `url(${background})` }}>
             <div className="hero-content flex-col lg:flex-row-reverse p-20">
                 <img
                     src={location}
@@ -16,7 +18,7 @@ const BeMarchant = () => {
                        We offer the lowest delivery charge with the highest value along with 100% safety of your product. Pathao courier delivers your parcels in every corner of Bangladesh right on time.
                     </p>
                     <button className="btn btn-outline btn-accent mr-5 text-white rounded-xl">Become a Marchant</button>
-                    <button className="btn btn-outline btn-accent text-white rounded-xl">Earnh With Profast</button>
+                    <button className="btn btn-outline btn-accent text-white rounded-xl">Earn With Profast</button>
                 </div>
             </div>
         </div> 
