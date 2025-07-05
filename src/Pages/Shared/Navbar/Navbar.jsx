@@ -1,15 +1,16 @@
 import React from 'react';
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
 import ProfastLogo from '../../../ProfastLogo/ProfastLogo';
 
 const Navbar = () => {
     const navItems = <>
         <li><NavLink to={'/'}>Home</NavLink></li>
+        <li><NavLink to={'/coverage'}>Coverage</NavLink></li>
         <li><NavLink to={'/about'}>About</NavLink></li>
 
     </>
     return (
-        <div className="navbar bg-white shadow-sm px-[10%] py-7">
+        <div className="navbar bg-white shadow-lg px-[10%] py-7 sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -30,7 +31,7 @@ const Navbar = () => {
                 </ul>
             </div>
             <div className="navbar-end">
-                <a className="btn">Button</a>
+                <Link to={'/login'} className='btn bg-[#B6D63C] '>Login</Link>
             </div>
         </div>
     );

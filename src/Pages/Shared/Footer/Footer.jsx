@@ -1,5 +1,5 @@
 import React from 'react';
-import ProfastLogo from '../../ProfastLogo/ProfastLogo';
+import ProfastLogo from '../../../ProfastLogo/ProfastLogo';
 
 const Footer = () => {
     return (
