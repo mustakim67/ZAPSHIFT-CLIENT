@@ -6,7 +6,7 @@ import { auth } from '../../Firebase/firebase.init';
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null);
     const [loading, setLoading] = useState(true);
-    const googleProvider=new GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
 
     const createUser = (email, password) => {
         setLoading(true);
@@ -17,13 +17,13 @@ const AuthProvider = ({ children }) => {
         setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
-    
-    const GoogleSignIn =()=>{
+
+    const GoogleSignIn = () => {
         setLoading(true);
-        return signInWithPopup(auth,googleProvider);
+        return signInWithPopup(auth, googleProvider);
     }
 
-    const logOut =()=>{
+    const logOut = () => {
         setLoading(true);
         return signOut(auth);
     }
@@ -32,8 +32,10 @@ const AuthProvider = ({ children }) => {
             setUser(currentUser);
             setLoading(false);
         });
-        return unSubscribe();
-    }, [])
+
+        return () => unSubscribe(); // ✅ properly unsubscribe when component unmounts
+    }, []);
+
 
 
     const authInfo = {

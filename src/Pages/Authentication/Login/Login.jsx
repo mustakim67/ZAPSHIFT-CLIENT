@@ -1,21 +1,22 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import { Link,} from 'react-router';
+import { Link, useNavigate, } from 'react-router';
 import Social from '../SocialLogin/Social';
 import useAuth from '../../../Hooks/useAuth';
 
 const Login = () => {
-
+    const navigate = useNavigate();
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const {signIn} =useAuth();
+    const { signIn } = useAuth();
     const onSubmit = data => {
-        signIn(data.email,data.password)
-        .then(res=>{
-         console.log(res);
-        })
-        .catch(error=>{
-            console.error(error);
-        })
+        signIn(data.email, data.password)
+            .then(res => {
+                console.log("Sign-in success:", res);
+                navigate('/'); 
+            })
+            .catch(error => {
+                console.error("Sign-in failed:", error);
+            });
     }
     return (
         <div className="card bg-base-100 w-full max-w-sm shrink-0">
@@ -24,8 +25,8 @@ const Login = () => {
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <fieldset className="fieldset">
                         <label className="label">Email</label>
-                        <input type="email" {...register("email",{required:true})} className="input " placeholder="Email" />
-                        {errors.email?.type ==='required' && <span>Email is required</span>}
+                        <input type="email" {...register("email", { required: true })} className="input " placeholder="Email" />
+                        {errors.email?.type === 'required' && <span>Email is required</span>}
                         <label className="label">Password</label>
                         <input type="password" {...register("password", { required: true, minLength: 6 })} className="input" placeholder="Password" />
                         {errors.password && <span>Enter valid password</span>}

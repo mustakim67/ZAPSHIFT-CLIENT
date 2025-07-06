@@ -9,7 +9,7 @@ const AuthLayout = () => {
             <div className='pt-10'>
                 <ProfastLogo></ProfastLogo>
             </div>
-            <div className="hero-content justify-between flex-col lg:flex-row-reverse">
+            <div className="hero-content flex items-center justify-between flex-col lg:flex-row-reverse">
                 <div className='flex-1 place-items-center'>
                     <img
                         src={AuthImage}

@@ -6,8 +6,11 @@ import Features from '../Features/Features';
 import BeMarchant from '../BeMarchant/BeMarchant';
 import CustomerReview from '../CustomerReview/CustomerReview';
 import FAQ from '../FAQ/FAQ';
+import useAuth from '../../../Hooks/useAuth';
 
 const Home = () => {
+    const {user}= useAuth();
+    console.log(user)
     return (
         <div>
             <Banner></Banner>

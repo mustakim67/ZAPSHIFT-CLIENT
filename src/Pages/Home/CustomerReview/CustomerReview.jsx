@@ -10,38 +10,38 @@ import 'swiper/css/effect-coverflow';
 const testimonials = [
     {
         name: 'Awlad Hossin',
-        title: 'Senior Product Designer',
-        text: 'A posture corrector works by providing support and gentle alignment to your shoulders, back, and spine, encouraging you to maintain proper posture throughout the day.',
+        title: 'Online Business Owner',
+        text: 'Profast delivers my customer parcels right from my doorstep—fast, reliable, and fully trackable.',
     },
     {
         name: 'Rasel Ahamed',
-        title: 'CTO',
-        text: 'A posture corrector helps you sit straighter, aligning your spine and preventing slouching during work or daily activities.',
+        title: 'IT Consultant',
+        text: 'I often ship devices across regions. Profast’s pickup service is a game-changer for my workflow.',
     },
     {
         name: 'Nasir Uddin',
-        title: 'CEO',
-        text: 'Daily use of a posture corrector ensures improved spinal health and reduces back pain caused by poor posture.',
+        title: 'E-commerce Entrepreneur',
+        text: 'Profast is my go-to for COD and urgent deliveries. Their service is consistent and professional.',
     },
     {
         name: 'Jannatul Ferdous',
-        title: 'Product Manager',
-        text: 'Using a posture corrector has been a game-changer for my back pain and comfort during long meetings.',
+        title: 'University Student',
+        text: 'Sending documents to Dhaka was seamless with Profast. No post office queues, no hassle.',
     },
     {
         name: 'Tanvir Rahman',
-        title: 'UX Researcher',
-        text: 'Proper alignment of the back boosts confidence and productivity—this tool helps you achieve that.',
+        title: 'Freelance Designer',
+        text: 'I use Profast to deliver printed materials to clients. Always on time and handled with care.',
     },
     {
         name: 'Nusrat Jahan',
-        title: 'Developer',
-        text: 'Perfect for remote workers—encourages healthy habits while sitting all day.',
+        title: 'Remote Developer',
+        text: 'Working from home means I rely on deliveries a lot—Profast has made hardware shipping super easy.',
     },
     {
         name: 'Sakib Hossain',
-        title: 'Marketing Lead',
-        text: 'Posture Pro helped reduce my neck strain and improved my mood after long work hours.',
+        title: 'Startup Marketer',
+        text: 'We used Profast to send promotional kits nationwide—their reach and speed impressed our team.',
     },
 ];
 
