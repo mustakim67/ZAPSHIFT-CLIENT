@@ -1,5 +1,6 @@
 import React from 'react';
-import { Link, Outlet } from 'react-router';
+import { Link, NavLink, Outlet } from 'react-router';
+import ProfastLogo from '../ProfastLogo/ProfastLogo';
 
 const DashboardLayout = () => {
     return (
@@ -29,17 +30,18 @@ const DashboardLayout = () => {
                         <div className="mx-2 flex-1 px-2">DashBoard</div>
                     </div>
                     {/* Page content here */}
-                    <div className='px-[10%]'>
+                    <div className='px-[10%] pt-15'>
                         <Outlet></Outlet>
                     </div>
 
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
-                    <ul className="menu text-base-content min-h-full w-80 p-4 bg-green-300">
+                    <ul className="menu text-base-content min-h-full w-80 p-4 bg-gray-300">
+                        <ProfastLogo></ProfastLogo>
                         {/* Sidebar content here */}
-                        <li><Link to={'/'}>Home</Link></li>
-                        <li><Link to={'/dashboard/myparcels'}>My Parcels</Link></li>
+                        <li><Link className='mt-4' to={'/'}>Home</Link></li>
+                        <li><NavLink to={'/dashboard/myparcels'}>My Parcels</NavLink></li>
                         <li><a>Sidebar Item 2</a></li>
                     </ul>
                 </div>

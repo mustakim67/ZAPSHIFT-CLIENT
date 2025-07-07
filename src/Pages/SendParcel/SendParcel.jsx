@@ -96,7 +96,7 @@ const SendParcel = () => {
           created_by: user.email,
           payment_status: 'unpaid',
           delivery_status: 'not_collected',
-          creation_date: new Date(),
+          creation_date: new Date(), //Date realated issue ase
           tracking_id: generateTrackingID(),
         };
 
