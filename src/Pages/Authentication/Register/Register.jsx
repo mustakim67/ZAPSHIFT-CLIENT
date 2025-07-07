@@ -1,21 +1,25 @@
 import React from 'react';
 import { useForm } from 'react-hook-form';
-import useAuth from '../../../Hooks/useAuth';
-import { Link, } from 'react-router';
+import { Link, useLocation, useNavigate, } from 'react-router';
 import Social from '../SocialLogin/Social';
+import useAuth from '../../../hooks/useAuth';
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
-    const {createUser}=useAuth();
+    const { createUser } = useAuth();
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from || '/';
 
     const onSubmit = data => {
-        createUser(data.email,data.password)
-        .then(res=>{
-            console.log(res.user);
-        })
-        .catch(error=>{
-            console.error(error);
-        })
+        createUser(data.email, data.password)
+            .then(res => {
+                console.log(res.user);
+                navigate(from);
+            })
+            .catch(error => {
+                console.error(error);
+            })
     }
     return (
         <div className="card bg-base-200 w-full max-w-sm shrink-0">
