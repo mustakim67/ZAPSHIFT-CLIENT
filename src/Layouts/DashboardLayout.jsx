@@ -1,6 +1,7 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router';
 import ProfastLogo from '../ProfastLogo/ProfastLogo';
+import { FaHome, FaBox, FaMoneyCheckAlt, FaSearchLocation, FaUserEdit } from 'react-icons/fa';
 
 const DashboardLayout = () => {
     return (
@@ -30,7 +31,7 @@ const DashboardLayout = () => {
                         <div className="mx-2 flex-1 px-2">DashBoard</div>
                     </div>
                     {/* Page content here */}
-                    <div className='px-[10%] pt-15'>
+                    <div className='px-[5%] pt-10'>
                         <Outlet></Outlet>
                     </div>
 
@@ -38,11 +39,37 @@ const DashboardLayout = () => {
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
                     <ul className="menu text-base-content min-h-full w-80 p-4 bg-gray-300">
-                        <ProfastLogo></ProfastLogo>
-                        {/* Sidebar content here */}
-                        <li><Link className='mt-4' to={'/'}>Home</Link></li>
-                        <li><NavLink to={'/dashboard/myparcels'}>My Parcels</NavLink></li>
-                        <li><a>Sidebar Item 2</a></li>
+                        <ProfastLogo />
+
+                        <li className="mt-4">
+                            <Link to="/" className="flex items-center gap-2">
+                                <FaHome /> Home
+                            </Link>
+                        </li>
+
+                        <li>
+                            <NavLink to="/dashboard/myparcels" className="flex items-center gap-2">
+                                <FaBox /> My Parcels
+                            </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/dashboard/payment-history" className="flex items-center gap-2">
+                                <FaMoneyCheckAlt /> Payment History
+                            </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/dashboard/track" className="flex items-center gap-2">
+                                <FaSearchLocation /> Track a Parcel
+                            </NavLink>
+                        </li>
+
+                        <li>
+                            <NavLink to="/dashboard/update-profile" className="flex items-center gap-2">
+                                <FaUserEdit /> Update Profile
+                            </NavLink>
+                        </li>
                     </ul>
                 </div>
             </div>
