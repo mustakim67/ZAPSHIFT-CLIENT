@@ -60,7 +60,7 @@ const MyParcels = () => {
     };
     return (
         <div className="mx-auto px-4 py-8">
-            <h2 className="text-xl md:text-2xl font-semibold mb-6 text-center">📦 My Parcels</h2>
+            <h2 className="text-xl md:text-2xl font-semibold mb-6">My Parcels</h2>
 
             <div className="overflow-x-auto rounded-lg shadow-sm">
                 <table className="table w-full text-sm md:text-base">

@@ -1,9 +1,13 @@
 import React from 'react';
 import { Link, NavLink, Outlet } from 'react-router';
 import ProfastLogo from '../ProfastLogo/ProfastLogo';
-import { FaHome, FaBox, FaMoneyCheckAlt, FaSearchLocation, FaUserEdit } from 'react-icons/fa';
+import { FaHome, FaBox, FaMoneyCheckAlt, FaSearchLocation, FaUserEdit, FaUsers, FaHourglassHalf } from 'react-icons/fa';
+import { MdAdminPanelSettings } from "react-icons/md";
+import useUserRole from '../Hooks/useUserRole';
+import { FaMotorcycle } from "react-icons/fa6";
 
 const DashboardLayout = () => {
+    const { role, roleLoading } = useUserRole();
     return (
         <div>
             <div className="drawer lg:drawer-open">
@@ -31,13 +35,14 @@ const DashboardLayout = () => {
                         <div className="mx-2 flex-1 px-2">DashBoard</div>
                     </div>
                     {/* Page content here */}
-                    <div className='px-[5%] pt-10'>
+                    <div className='px-[2%] pt-10'>
                         <Outlet></Outlet>
                     </div>
 
                 </div>
                 <div className="drawer-side">
                     <label htmlFor="my-drawer-2" aria-label="close sidebar" className="drawer-overlay"></label>
+
                     <ul className="menu text-base-content min-h-full w-80 p-4 bg-gray-300">
                         <ProfastLogo />
 
@@ -64,6 +69,37 @@ const DashboardLayout = () => {
                                 <FaSearchLocation /> Track a Parcel
                             </NavLink>
                         </li>
+                        {/* //admin links */}
+                        {!roleLoading && role === 'admin' &&
+                            <>
+                                {/* Pending Rider Requests */}
+                                <li>
+                                    <NavLink to="/dashboard/pending-riders" className="flex items-center gap-2">
+                                        <FaHourglassHalf /> Pending Rider Requests
+                                    </NavLink>
+                                </li>
+                                {/* Active Riders */}
+                                <li>
+                                    <NavLink to="/dashboard/active-riders" className="flex items-center gap-2">
+                                        <FaUsers /> Active Riders
+                                    </NavLink>
+                                </li>
+                                {/* Assign Rider */}
+                                <li>
+                                    <NavLink to="/dashboard/assign-rider" className="flex items-center gap-2">
+                                        <FaMotorcycle /> Assign Rider
+                                    </NavLink>
+                                </li>
+                                {/* Admin MAnage */}
+                                <li>
+                                    <NavLink to="/dashboard/admin" className="flex items-center gap-2">
+                                        <MdAdminPanelSettings /> Add New Admin
+                                    </NavLink>
+                                </li>
+                            </>
+
+                        }
+
 
                         <li>
                             <NavLink to="/dashboard/update-profile" className="flex items-center gap-2">
@@ -71,6 +107,7 @@ const DashboardLayout = () => {
                             </NavLink>
                         </li>
                     </ul>
+
                 </div>
             </div>
         </div>

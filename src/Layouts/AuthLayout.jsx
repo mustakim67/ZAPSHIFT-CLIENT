@@ -6,14 +6,14 @@ import ProfastLogo from '../ProfastLogo/ProfastLogo';
 const AuthLayout = () => {
     return (
         <div className="px-[10%] bg-base-200 min-h-dvh">
-            <div className='pt-10'>
+            <div className='py-5'>
                 <ProfastLogo></ProfastLogo>
             </div>
             <div className="hero-content flex items-center justify-between flex-col lg:flex-row-reverse">
                 <div className='flex-1 place-items-center'>
                     <img
                         src={AuthImage}
-                        className="max-w-lg rounded-lg"
+                        className="max-w-sm md:max-w-2xl rounded-lg"
                     />
                 </div>
                 <div className='flex-1 '>

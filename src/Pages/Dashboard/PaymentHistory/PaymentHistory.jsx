@@ -20,9 +20,9 @@ const PaymentHistory = () => {
 
     return (
         <div className="mx-auto px-4 py-8">
-            <h2 className="text-2xl font-semibold mb-6 text-center">💳 Payment History</h2>
+            <h2 className="text-2xl font-semibold mb-6">Payment History</h2>
 
-            <div className="overflow-x-auto rounded-lg shadow bg-white">
+            <div className="overflow-x-auto rounded-lg shadow">
                 <table className="table w-full text-sm md:text-base">
                     <thead className="bg-base-200 text-gray-700">
                         <tr>

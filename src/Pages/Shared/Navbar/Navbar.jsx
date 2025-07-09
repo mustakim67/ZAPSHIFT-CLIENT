@@ -1,7 +1,8 @@
 import React from 'react';
 import { Link, NavLink } from 'react-router';
 import ProfastLogo from '../../../ProfastLogo/ProfastLogo';
-import useAuth from '../../../hooks/useAuth';
+import useAuth from '../../../Hooks/useAuth';
+
 
 const Navbar = () => {
     const { user, logOut } = useAuth();
@@ -15,12 +16,13 @@ const Navbar = () => {
             <li><NavLink to={'/dashboard'}>Dashboard</NavLink></li>
         }
         <li><NavLink to={'/sendParcel'}>Send a Parcel</NavLink></li>
+        <li><NavLink to="/be-rider" className="flex items-center gap-2">Be a Rider</NavLink></li>
         <li><NavLink to={'/coverage'}>Coverage</NavLink></li>
         <li><NavLink to={'/about'}>About</NavLink></li>
 
     </>
     return (
-        <div className="navbar bg-white shadow-lg px-[10%] py-3 sticky top-0 z-50">
+        <div className="navbar bg-white shadow-lg px-[10%] py-5 sticky top-0 z-50">
             <div className="navbar-start">
                 <div className="dropdown">
                     <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -32,8 +34,7 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl"><ProfastLogo></ProfastLogo>
-                </a>
+                <ProfastLogo></ProfastLogo>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1 text-lg">

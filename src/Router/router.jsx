@@ -14,6 +14,13 @@ import MyParcels from "../Pages/Dashboard/MyParcels/Myparcels";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import PaymentHistory from "../Pages/Dashboard/PaymentHistory/PaymentHistory";
 import Track from "../Pages/Dashboard/Track/Track";
+import BeRider from "../Pages/Dashboard/BeRider/BeRider";
+import PendingRiders from "../Pages/Dashboard/Riders/PendingRiders";
+import ActiveRiders from "../Pages/Dashboard/Riders/ActiveRiders";
+import ManageAdmin from "../Pages/Dashboard/manageAdmin";
+import Forbidden from "../Pages/ForbiddenPage/Forbidden";
+import AdminRoutes from "../Routes/AdminRoutes/AdminRoutes";
+import AssignRider from "../Pages/Dashboard/AssignRider/AssignRider";
 
 export const router = createBrowserRouter([
   {
@@ -33,8 +40,17 @@ export const router = createBrowserRouter([
         path: 'sendParcel',
         loader: () => fetch('./serviceCenter.json'),
         element: <PrivateRoute><SendParcel></SendParcel></PrivateRoute>
-        
-      }
+
+      },
+      {
+        path: 'be-rider',
+        loader: () => fetch('./serviceCenter.json'),
+        element: <PrivateRoute><BeRider></BeRider></PrivateRoute>
+      },
+      {
+        path: 'forbidden',
+        Component: Forbidden
+      },
     ]
   },
   {
@@ -52,24 +68,40 @@ export const router = createBrowserRouter([
     ]
   },
   {
-    path:"dashboard",
-    element:<PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
-    children:[
+    path: "dashboard",
+    element: <PrivateRoute><DashboardLayout></DashboardLayout></PrivateRoute>,
+    children: [
       {
-        path:'myparcels',
-        element:<MyParcels></MyParcels>
+        path: 'myparcels',
+        element: <MyParcels></MyParcels>
       },
       {
-        path:'payment/:parcelId',
-        element:<PrivateRoute><Payment></Payment></PrivateRoute>
+        path: 'payment/:parcelId',
+        element: <PrivateRoute><Payment></Payment></PrivateRoute>
       },
       {
-        path:'payment-history',
-        element:<PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
+        path: 'payment-history',
+        element: <PrivateRoute><PaymentHistory></PaymentHistory></PrivateRoute>
       },
       {
-        path:'track',
-        element:<PrivateRoute><Track></Track></PrivateRoute>
+        path: 'track',
+        element: <PrivateRoute><Track></Track></PrivateRoute>
+      },
+      {
+        path: 'pending-riders',
+        element: <AdminRoutes><PendingRiders></PendingRiders></AdminRoutes>
+      },
+      {
+        path: 'active-riders',
+        element:<AdminRoutes><ActiveRiders></ActiveRiders></AdminRoutes> 
+      },
+      {
+        path: 'assign-rider',
+        element:<AdminRoutes><AssignRider></AssignRider></AdminRoutes> 
+      },
+      {
+        path: 'admin',
+        element: <AdminRoutes><ManageAdmin></ManageAdmin></AdminRoutes>
       }
     ]
   }
